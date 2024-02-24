@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class logsign extends StatelessWidget {
-  const logsign({super.key});
+class login extends StatelessWidget {
+  const login({super.key});
 
   @override
   Widget build(BuildContext context) {
