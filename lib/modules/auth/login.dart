@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:turf/widgets/textbox.dart';
 
 class login extends StatelessWidget {
   const login({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final emailcontroller=TextEditingController();
+    final passwordcontroller=TextEditingController();
 
     return  Scaffold(body:Container(
         margin: EdgeInsets.all(20),
@@ -36,30 +39,18 @@ class login extends StatelessWidget {
     margin: EdgeInsets.only(left: 35, right: 35),
     child: Column(
     children: [
-    TextField(
-    style: TextStyle(color: Colors.black),
-    decoration: InputDecoration(
-    fillColor: Colors.grey.shade100,
-    filled: true,
-    hintText: "Email",
-    border: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(10),
-    )),
+    TextBox(
+      controller: emailcontroller,
+      name: 'Enter email',
+
     ),
     SizedBox(
     height: 30,
     ),
-    TextField(
-    style: TextStyle(),
-    obscureText: true,
-    decoration: InputDecoration(
-    fillColor: Colors.grey.shade100,
-    filled: true,
-    hintText: "Password",
-        suffixIcon: Icon(Icons.remove_red_eye_outlined),
-    border: OutlineInputBorder(
-    borderRadius: BorderRadius.circular(10),
-    )),
+    TextBox(
+      controller: passwordcontroller,
+      name: 'Enter password',
+      sficon: Icon(Icons.remove_red_eye),
     ),
     SizedBox(
     height: 40,
@@ -77,7 +68,11 @@ class login extends StatelessWidget {
     backgroundColor: Colors.white,
     child: IconButton(
     color: Colors.black,
-    onPressed: () {},
+    onPressed: () {
+
+      print(emailcontroller.text);
+
+    },
     icon: Icon(
     Icons.arrow_forward,
     )),
@@ -132,6 +127,7 @@ class login extends StatelessWidget {
     ));
     }
 }
+
 
 
 
