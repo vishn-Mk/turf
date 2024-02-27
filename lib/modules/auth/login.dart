@@ -13,20 +13,16 @@ class login extends StatelessWidget {
     return Scaffold(
         body: Container(
       margin: EdgeInsets.all(20),
+      color: Colors.white,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
             Container(
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('asset/images/football-grass.jpg'),
-                        fit: BoxFit.cover))),
-            Container(
               padding: EdgeInsets.only(left: 35, top: 130),
               child: Text(
                 'Login Now',
-                style: TextStyle(color: Colors.white, fontSize: 33),
+                style: TextStyle(color: Colors.black, fontSize: 33),
               ),
             ),
             SingleChildScrollView(
@@ -52,65 +48,47 @@ class login extends StatelessWidget {
                             name: 'Enter password',
                             sficon: Icon(Icons.remove_red_eye),
                           ),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Sign In',
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "ForgotPassword",
                                 style: TextStyle(
-                                    fontSize: 27, fontWeight: FontWeight.w700),
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
                               ),
-                              CircleAvatar(
-                                radius: 30,
-                                backgroundColor: Colors.white,
-                                child: IconButton(
-                                    color: Colors.black,
-                                    onPressed: () {
-                                      print(emailcontroller.text);
-                                    },
-                                    icon: Icon(
-                                      Icons.arrow_forward,
-                                    )),
-                              )
-                            ],
+                            ),
                           ),
+                          SizedBox(width: 600,
+                              child: ElevatedButton(
+                              onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green),
+                  child: Text("Login",style: TextStyle(color: Colors.white),),),
+                          ),
+
                           SizedBox(
                             height: 40,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pushNamed(context, 'register');
-                                },
-                                child: Text(
-                                  'Sign Up',
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize: 18),
-                                ),
-                                style: ButtonStyle(),
+                          Center(
+                            child: Container(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Dont have an Account?",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+
+                                  ),
+                                  SizedBox(width: 5,),
+                                  TextButton(onPressed: () {
+
+                                  }, child: Text ('Register')),
+                                ],
                               ),
-                              TextButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Forgot Password?',
-                                    style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.black,
-                                      fontSize: 18,
-                                    ),
-                                  )),
-                            ],
-                          )
+                            ),
+                          ),
                         ],
                       ),
                     )
