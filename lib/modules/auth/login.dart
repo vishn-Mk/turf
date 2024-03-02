@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:turf/modules/auth/choose_signup.dart';
 import 'package:turf/widgets/textbox.dart';
 
 class login extends StatelessWidget {
@@ -60,14 +61,18 @@ class login extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(width: 600,
-                              child: ElevatedButton(
+                          SizedBox(
+                            width: 600,
+                            child: ElevatedButton(
                               onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green),
-                  child: Text("Login",style: TextStyle(color: Colors.white),),),
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.green),
+                              child: Text(
+                                "Login",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ),
                           ),
-
                           SizedBox(
                             height: 40,
                           ),
@@ -79,12 +84,19 @@ class login extends StatelessWidget {
                                     "Dont have an Account?",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
-
                                   ),
-                                  SizedBox(width: 5,),
-                                  TextButton(onPressed: () {
-
-                                  }, child: Text ('Register')),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => screen(),
+                                            ));
+                                      },
+                                      child: Text('Register')),
                                 ],
                               ),
                             ),
