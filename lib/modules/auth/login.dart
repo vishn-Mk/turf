@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:turf/modules/auth/choose_signup.dart';
+import 'package:turf/modules/auth/homepa.dart';
 import 'package:turf/widgets/textbox.dart';
 
 class login extends StatelessWidget {
@@ -39,14 +40,14 @@ class login extends StatelessWidget {
                         children: [
                           TextBox(
                             controller: emailcontroller,
-                            name: 'Enter email',
+                            name: 'Enter Email',
                           ),
                           SizedBox(
                             height: 30,
                           ),
                           TextBox(
                             controller: passwordcontroller,
-                            name: 'Enter password',
+                            name: 'Enter Password',
                             sficon: Icon(Icons.remove_red_eye),
                           ),
                           Container(
@@ -64,7 +65,9 @@ class login extends StatelessWidget {
                           SizedBox(
                             width: 600,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => hmoepag(),));
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.green),
                               child: Text(
@@ -74,19 +77,17 @@ class login extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 10,
                           ),
                           Center(
                             child: Container(
+                              padding: EdgeInsets.only(left: 30),
                               child: Row(
                                 children: [
                                   Text(
-                                    "Dont have an Account?",
+                                    "Don't have an Account?",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
-                                  ),
-                                  SizedBox(
-                                    width: 5,
                                   ),
                                   TextButton(
                                       onPressed: () {
@@ -96,7 +97,21 @@ class login extends StatelessWidget {
                                               builder: (context) => screen(),
                                             ));
                                       },
-                                      child: Text('Register')),
+                                      child: Text('Register',style: TextStyle(color: Colors.green),)),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Center(
+                            child: Container(
+                              padding: EdgeInsets.only(left: 30),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.sports_handball),
+                                  TextButton(
+                                      onPressed: () {
+                                      },
+                                      child: Text('Book  Your Tournament Here',style: TextStyle(color: Colors.green),),),
                                 ],
                               ),
                             ),

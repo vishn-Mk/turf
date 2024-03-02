@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:turf/modules/auth/homepa.dart';
+import 'package:turf/modules/auth/login.dart';
 
 class prop extends StatefulWidget {
   const prop({super.key});
@@ -15,8 +17,6 @@ class _propState extends State<prop> {
         title: const Text("SignUp"),
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading:
-        IconButton(icon: const Icon(Icons.arrow_back), onPressed: () {}),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -76,7 +76,9 @@ class _propState extends State<prop> {
               SizedBox(
                 width: 600,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => login(),));
+                    },
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                     child: Text("signUp",style: TextStyle(color: Colors.white),)
                 ),

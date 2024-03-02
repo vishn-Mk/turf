@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:turf/modules/auth/homepa.dart';
+import 'package:turf/modules/auth/login.dart';
 
 import '../../widgets/userText.dart';
 
@@ -18,8 +20,6 @@ class _plysState extends State<plys> {
         title: const Text("SignUp"),
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading:
-            IconButton(icon: const Icon(Icons.arrow_back), onPressed: () {}),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -73,19 +73,13 @@ class _plysState extends State<plys> {
               SizedBox(
                 height: 20,
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'select a sport',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20))),
-              ),
-              SizedBox(
-                height: 20,
-              ),
+
               SizedBox(
                 width: 600,
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => login(),));
+                    },
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                     child: Text("signUp",style: TextStyle(color: Colors.white),)
                 ),
